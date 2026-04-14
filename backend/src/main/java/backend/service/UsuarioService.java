@@ -28,4 +28,16 @@ public class UsuarioService {
     public Usuario obtenerPorId(Long id){
         return usuarioRepository.findById(id).orElse(null);
     }
+
+    public Usuario autenticar(String correo, String password){
+        Optional<Usuario> usuarioOptional = usuarioRepository.findByCorreo(correo);
+
+        if (usuarioOptional.isPresent()){
+            Usuario usuario = usuarioOptional.get();
+            if (usuario.getPassword().equals(password)){
+                return usuario;
+            }
+        }
+        return null;
+    }
 }
