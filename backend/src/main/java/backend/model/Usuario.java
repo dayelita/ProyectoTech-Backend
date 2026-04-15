@@ -14,6 +14,7 @@ public class Usuario {
     private String correo;
     private String password;
     private String telefono;
+    private String rol;
 
     public Long getId(){
         return id;
@@ -46,5 +47,13 @@ public class Usuario {
     }
     public void setTelefono(String telefono){
         this.telefono = telefono;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 }
