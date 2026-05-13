@@ -82,7 +82,7 @@ public class ReservaService {
         return reservaRepository.findAll();
     }
 
-    // 🔥 NUEVO MÉTODO PARA ELIMINAR BLOQUEOS/RESERVAS
+    // 🔥 NUEVO MeTODO PARA ELIMINAR BLOQUEOS/RESERVAS
     @Transactional(rollbackFor = Exception.class)
     public boolean eliminarReserva(Long id) {
         if (reservaRepository.existsById(id)) {
